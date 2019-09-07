@@ -47,9 +47,11 @@ void RenderArea::paintEvent(QPaintEvent *)
     default:
         break;
     }
+    // tells program to use this color after eval the swtich case
+     painter.setPen(myBackgroundColor);
 
     // Write text, increase font size, add blue color
-//    painter.setPen(myBackgroundColor);
+
     painter.setFont(QFont("Arial", 30));
     painter.drawText(rect(), Qt::BottomEdge, "Hcku");
 

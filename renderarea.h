@@ -21,9 +21,10 @@ public:
     QColor backgroundColor () const { return myBackgroundColor;} // getter
 
     // all our shapes from our gui
-    enum Shapes {Ark, Polygon, Cross, Name};
-    void setShape (Shapes shape)  {myShape = shape;} // setter
-    Shapes shape () const { return myShape; }        // getter
+    enum ShapeType {Ark, Polygon, Cross, Name};
+
+    void setShape (ShapeType shape)  {myShape = shape;} // setter
+    ShapeType shape () const { return myShape; }        // getter
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
@@ -37,7 +38,7 @@ private:
     //added these to change background
     QColor myBackgroundColor;
     QColor myShapeColor;
-    Shapes myShape;
+    ShapeType myShape;
 };
 
 #endif // RENDERAREA_H

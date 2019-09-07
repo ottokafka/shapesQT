@@ -18,6 +18,7 @@ MainWindow::~MainWindow()
  // change BG color on click
 void MainWindow::on_btnArc_clicked()
 {
+
   this->ui->renderArea->setShape(RenderArea::Ark);
       this->ui->renderArea->repaint();
 
