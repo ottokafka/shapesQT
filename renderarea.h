@@ -2,16 +2,42 @@
 #define RENDERAREA_H
 
 #include <QWidget>
+#include <QColor>
 
+// default code on creation of the project
 class RenderArea : public QWidget
 {
     Q_OBJECT
 public:
+    // default code on creation of the project
     explicit RenderArea(QWidget *parent = nullptr);
+
+    // added these to make window size stable
+    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
+
+    // set background color using INLINE and a SETTER
+    void setBackgroundColor (QColor color) {myBackgroundColor = color;} // Setter
+    QColor backgroundColor () const { return myBackgroundColor;} // getter
+
+    // all our shapes from our gui
+    enum Shapes {Ark, Polygon, Cross, Name};
+    void setShape (Shapes shape)  {myShape = shape;} // setter
+    Shapes shape () const { return myShape; }        // getter
+
+protected:
+    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
 signals:
 
 public slots:
+
+private:
+
+    //added these to change background
+    QColor myBackgroundColor;
+    QColor myShapeColor;
+    Shapes myShape;
 };
 
 #endif // RENDERAREA_H
