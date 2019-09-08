@@ -27,7 +27,12 @@ private slots:
 
     void on_btnName_clicked();
 
-    // default code on creation of the project
+    void on_btnEllispe_clicked();
+
+    void on_btnSquare_clicked();
+
+    void on_btnRectangle_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

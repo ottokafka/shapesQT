@@ -49,3 +49,21 @@ void MainWindow::on_btnName_clicked()
     // changes the color on click
     //    this->ui->renderArea->setBackgroundColor(Qt::white);
 }
+
+void MainWindow::on_btnEllispe_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Ellipse);
+    this->ui->renderArea->repaint();
+}
+
+void MainWindow::on_btnSquare_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Square);
+    this->ui->renderArea->repaint();
+}
+
+void MainWindow::on_btnRectangle_clicked()
+{
+    this->ui->renderArea->setShape(RenderArea::Rectangle);
+    this->ui->renderArea->repaint();
+}

@@ -9,6 +9,9 @@ class RenderArea : public QWidget
 {
     Q_OBJECT
 public:
+    // all our shapes from our gui
+    enum ShapeType {Ark, Polygon, Cross, Name, Ellipse, Square, Rectangle};
+
     // default code on creation of the project
     explicit RenderArea(QWidget *parent = nullptr);
 
@@ -20,8 +23,6 @@ public:
     void setBackgroundColor (QColor color) {myBackgroundColor = color;} // Setter
     QColor backgroundColor () const { return myBackgroundColor;} // getter
 
-    // all our shapes from our gui
-    enum ShapeType {Ark, Polygon, Cross, Name};
 
     void setShape (ShapeType shape)  {myShape = shape;} // setter
     ShapeType shape () const { return myShape; }        // getter

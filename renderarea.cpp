@@ -27,43 +27,10 @@ void RenderArea::paintEvent(QPaintEvent *)
     // Enable the function QPainter
     QPainter painter(this);
 
-    switch (myShape) {
-    case Ark:
-        myBackgroundColor = Qt::red;
-        break;
-
-    case Polygon:
-         myBackgroundColor = Qt::blue;
-        break;
-
-    case Cross:
-        myBackgroundColor = Qt::yellow;
-        break;
-
-    case Name:
-        myBackgroundColor = Qt::black;
-        break;
-
-    default:
-        break;
-    }
-    // tells program to use this color after eval the swtich case
-     painter.setPen(myBackgroundColor);
-
-    // Write text, increase font size, add blue color
-
-    painter.setFont(QFont("Arial", 30));
-    painter.drawText(rect(), Qt::BottomEdge, "Hcku");
-
-    // Draw an X
-    painter.drawLine(this->rect().topLeft(), this->rect().bottomRight());
-    painter.drawLine(this->rect().bottomLeft(), this->rect().topRight());
-
-    // Draw an arc
-    QRectF arcLocation(10.0, 20.0, 80.0, 60.0);
+    // draw ark
+    static const QRectF rectangle3(10.0, 20.0, 80.0, 60.0);
     int startAngle = 30 * 16;
     int spanAngle = 120 * 16;
-    painter.drawArc(arcLocation, startAngle, spanAngle);
 
     // Draw polygon
     static const QPointF points[4] = {
@@ -72,10 +39,57 @@ void RenderArea::paintEvent(QPaintEvent *)
         QPointF(80.0, 30.0),
         QPointF(90.0, 70.0)
     };
-    painter.drawConvexPolygon(points, 4);
 
-    //Draw ellipse
-QRectF ellipseLocation(90.0, 20.0, 80.0, 60.0);
-painter.drawEllipse(ellipseLocation);
+    switch (myShape) {
+    case Ark:
+   myBackgroundColor = Qt::red;
+
+   painter.drawArc(rectangle3, startAngle, spanAngle);
+        break;
+
+    case Polygon:
+        painter.drawConvexPolygon(points, 4);
+         myBackgroundColor = Qt::blue;
+        break;
+
+    case Cross:
+        myBackgroundColor = Qt::yellow;
+    // Draw an X
+    painter.drawLine(this->rect().topLeft(), this->rect().bottomRight());
+    painter.drawLine(this->rect().bottomLeft(), this->rect().topRight());
+        break;
+
+    case Name:
+        myBackgroundColor = Qt::black;
+        painter.setFont(QFont("Arial", 30));
+        painter.drawText(rect(), Qt::BottomEdge, "Hcku");
+        break;
+
+    case Ellipse:
+        myBackgroundColor = Qt::black;
+        //Draw ellipse
+   static const QRectF ellipseLocation(90.0, 20.0, 80.0, 60.0);
+    painter.drawEllipse(ellipseLocation);
+          break;
+
+    case Square:
+      static const QRectF rectangle(10.0, 20.0, 80.0, 60.0);
+        painter.drawRect(rectangle);
+           break;
+
+    case Rectangle:
+       static const QRectF rectangle2(10.0, 20.0, 80.0, 60.0);
+        painter.drawRoundedRect(rectangle2, 20.0, 15.0);
+           break;
+    }
+    // tells program to use this color after eval the swtich case
+     painter.setPen(myBackgroundColor);
+
+    // Write text, increase font size, add blue color
+
+
+
+
+
 
 }// end of function

@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>11</x>
@@ -54,6 +54,27 @@
         <widget class="QPushButton" name="btnName">
          <property name="text">
           <string>name</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnEllispe">
+         <property name="text">
+          <string>ellispe</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSquare">
+         <property name="text">
+          <string>square</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnRectangle">
+         <property name="text">
+          <string>rectangle</string>
          </property>
         </widget>
        </item>
