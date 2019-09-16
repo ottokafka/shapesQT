@@ -28,7 +28,7 @@ void RenderArea::paintEvent(QPaintEvent *)
     QPainter painter(this);
 
     // draw ark
-    static const QRectF rectangle3(10.0, 20.0, 80.0, 60.0);
+    static const QRectF rectangle3(120.0, 20.0, 80.0, 60.0); // location on screen
     int startAngle = 30 * 16;
     int spanAngle = 120 * 16;
 
@@ -62,23 +62,23 @@ void RenderArea::paintEvent(QPaintEvent *)
     case Name:
         myBackgroundColor = Qt::black;
         painter.setFont(QFont("Arial", 30));
-        painter.drawText(rect(), Qt::BottomEdge, "Hcku");
+        painter.drawText(rect(), Qt::LeftEdge, "Hcku");
         break;
 
     case Ellipse:
         myBackgroundColor = Qt::black;
         //Draw ellipse
-   static const QRectF ellipseLocation(90.0, 20.0, 80.0, 60.0);
+   static const QRectF ellipseLocation(120.0, 20.0, 80.0, 60.0);
     painter.drawEllipse(ellipseLocation);
           break;
 
     case Square:
-      static const QRectF rectangle(10.0, 20.0, 80.0, 60.0);
+      static const QRectF rectangle(120.0, 20.0, 80.0, 60.0);
         painter.drawRect(rectangle);
            break;
 
     case Rectangle:
-       static const QRectF rectangle2(10.0, 20.0, 80.0, 60.0);
+       static const QRectF rectangle2(120.0, 20.0, 80.0, 60.0);
         painter.drawRoundedRect(rectangle2, 20.0, 15.0);
            break;
     }

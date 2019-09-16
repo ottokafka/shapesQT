@@ -20,17 +20,18 @@ void MainWindow::on_btnArc_clicked()
 {
 
   this->ui->renderArea->setShape(RenderArea::Ark);
+//    this->ui->renderArea->setBackgroundColor(Qt::red);
       this->ui->renderArea->repaint();
 
-    //    this->ui->renderArea->setBackgroundColor(Qt::red);
 }
  // change BG color on click
 void MainWindow::on_btnPolygon_clicked()
 {
+//       this->ui->renderArea->setBackgroundColor(Qt::black);
       this->ui->renderArea->setShape(RenderArea::Polygon);
       this->ui->renderArea->repaint();
 
-    //    this->ui->renderArea->setBackgroundColor(Qt::black);
+
 }
  // change BG color on click
 void MainWindow::on_btnCross_clicked()
